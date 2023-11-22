@@ -1,0 +1,8 @@
+spring:
+  # 取名，现在没有作用，后面分布式会有作用
+  application:
+    name: spzx-manager
+
+  # 激活某一个dev配置文件
+  profiles:
+    active: dev

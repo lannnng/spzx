@@ -1,0 +1,46 @@
+
+# 修改自己这个后台的端口号，要不然就是tomcat的端口号
+server:
+  port: 8501
+
+# 最终写法，用这个
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.126.126:3306/db_spzx  #?serverTimezone=GMT%2B8  # 设置时区serverTimezone=GMT+8
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+ # redis 配置
+  data:
+    redis:
+      port: 6379
+      host: 192.168.126.126
+      password: 123456           # 持久化设置的密码
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+# mybatis 的映射路径配置
+mybatis:
+  mapper-locations: classpath:mappers/*.xml
+
+  config-location: classpath:mybatis-config.xml   # 读取配置文件，注册分页插件
+
+  # 日志的位置文件是自动扫描的  只要是这个名字 logback-spring.xml  就自动扫描起作用
+
+aa:
+  white:
+    urls: 
+    - /admin/system/index/getCaptcha
+    - /admin/system/index/login
+    - /doc.html
+    - /webjars/css/**
+    - /webjars/js/**
+    - /v3/api-docs/**
+    - /favicon.ico
+
+
+
+
+
